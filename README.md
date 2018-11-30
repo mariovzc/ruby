@@ -1,51 +1,50 @@
-# Ruby Style Guide
+# Guia de estilos Ruby
 
-This is Airbnb's Ruby Style Guide.
+Esta es la guía de estilos para ruby de Airbnb's
 
-It was inspired by [GitHub's guide](https://web.archive.org/web/20160410033955/https://github.com/styleguide/ruby) and [Rubocop guide][rubocop-guide].
+Inspirada en [GitHub's guia](https://web.archive.org/web/20160410033955/https://github.com/styleguide/ruby) and [Rubocop guia][rubocop-guide].
 
-Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
+Airbnb tambien mantiene [Guia de estilos de JavaScript][airbnb-javascript].
 
 ## Table of Contents
-  1. [Whitespace](#whitespace)
-      1. [Indentation](#indentation)
-      1. [Inline](#inline)
-      1. [Newlines](#newlines)
-  1. [Line Length](#line-length)
-  1. [Commenting](#commenting)
-      1. [File/class-level comments](#fileclass-level-comments)
-      1. [Function comments](#function-comments)
-      1. [Block and inline comments](#block-and-inline-comments)
-      1. [Punctuation, spelling, and grammar](#punctuation-spelling-and-grammar)
-      1. [TODO comments](#todo-comments)
-      1. [Commented-out code](#commented-out-code)
-  1. [Methods](#methods)
-      1. [Method definitions](#method-definitions)
-      1. [Method calls](#method-calls)
-  1. [Conditional Expressions](#conditional-expressions)
-      1. [Conditional keywords](#conditional-keywords)
-      1. [Ternary operator](#ternary-operator)
-  1. [Syntax](#syntax)
-  1. [Naming](#naming)
+  1. [Espacios en Blanco](#whitespace)
+      1. [Identacion](#indentation)
+      1. [En línea](#inline)
+      1. [Nuevas Lineas](#newlines)
+  1. [Longitud de la Linea](#line-length)
+  1. [Comentarios](#commenting)
+      1. [Comentarios a nivel de archivo / clase](#fileclass-level-comments)
+      1. [Comentarios de funciones](#function-comments)
+      1. [Bloques y comentarios en linea](#block-and-inline-comments)
+      1. [Puntuación, ortografía y gramática.](#punctuation-spelling-and-grammar)
+      1. [Comentarios para TODO](#todo-comments)
+      1. [Código comentado](#commented-out-code)
+  1. [Métodos](#methods)
+      1. [Definicion de Metodos](#method-definitions)
+      1. [Llamadas de metodos](#method-calls)
+  1. [Expresiones condicionales](#conditional-expressions)
+      1. [Palabras claves en condicionales](#conditional-keywords)
+      1. [Operador ternario](#ternary-operator)
+  1. [Sintaxis](#syntax)
+  1. [Nombramiento](#naming)
   1. [Classes](#classes)
-  1. [Exceptions](#exceptions)
-  1. [Collections](#collections)
+  1. [Excepciones](#exceptions)
+  1. [Colecciones](#collections)
   1. [Strings](#strings)
-  1. [Regular Expressions](#regular-expressions)
-  1. [Percent Literals](#percent-literals)
+  1. [Expresiones regulares](#regular-expressions)
+  1. [Literales](#percent-literals)
   1. [Rails](#rails)
       1. [Scopes](#scopes)
-  1. [Be Consistent](#be-consistent)
-  1. [Translation](#translation)
+  1. [Se consistente](#be-consistent)
+  1. [Traducción](#translation)
 
-## Whitespace
+## Espacios en Blanco
 
-### Indentation
+### Identacion
 
-* <a name="default-indentation"></a>Use soft-tabs with a
-    two-space indent.<sup>[[link](#default-indentation)]</sup>
+* <a name="default-indentation"></a>Utilice soft-tabs con una Identacion de dos espacios<sup>[[link](#default-indentation)]</sup>
 
-* <a name="indent-when-as-case"></a>Indent `when` as deep as `case`.
+* <a name="indent-when-as-case"></a>Identar `when` tan profundo como `case`.
     <sup>[[link](#indent-when-as-case)]</sup>
 
     ```ruby
@@ -70,8 +69,7 @@ Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
            end
     ```
 
-* <a name="align-function-params"></a>Align function parameters either all on
-    the same line or one per line.<sup>[[link](#align-function-params)]</sup>
+* <a name="align-function-params"></a>Alinear los parámetros de la función, ya sea todos en la misma línea o uno por línea.<sup>[[link](#align-function-params)]</sup>
 
     ```ruby
     # bad
@@ -105,8 +103,7 @@ Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
     end
     ```
 
-* <a name="indent-multi-line-bool"></a>Indent succeeding lines in multi-line
-    boolean expressions.<sup>[[link](#indent-multi-line-bool)]</sup>
+* <a name="indent-multi-line-bool"></a>Identar Lineas Sucesivas en expreciones booleanas multilineas.<sup>[[link](#indent-multi-line-bool)]</sup>
 
     ```ruby
     # bad
@@ -126,11 +123,10 @@ Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
 
 ### Inline
 
-* <a name="trailing-whitespace"></a>Never leave trailing whitespace.
+* <a name="trailing-whitespace"></a>Nunca dejes espacios en blanco al final.
     <sup>[[link](#trailing-whitespace)]</sup>
 
-* <a name="space-before-comments"></a>When making inline comments, include a
-    space between the end of the code and the start of your comment.
+* <a name="space-before-comments"></a>Cuando hagas comentarios en linea, incluye un espacio entre el final del codigo y el inicio de tu comentario.
     <sup>[[link](#space-before-comments)]</sup>
 
     ```ruby
@@ -141,8 +137,8 @@ Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
     result = func(a, b) # we might want to change b to c
     ```
 
-* <a name="spaces-operators"></a>Use spaces around operators; after commas,
-    colons, and semicolons; and around `{` and before `}`.
+* <a name="spaces-operators"></a>Usa espacios alrededor de los operadores; despues de las comas
+     dos puntos, y punto y coma; y alrededor de `{` y antes de `}`.
     <sup>[[link](#spaces-operators)]</sup>
 
     ```ruby
@@ -152,15 +148,14 @@ Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
     [1, 2, 3].each { |e| puts e }
     ```
 
-* <a name="no-space-before-commas"></a>Never include a space before a comma.
+* <a name="no-space-before-commas"></a>Nunca Agregues un espacio antes de una coma.
     <sup>[[link](#no-space-before-commas)]</sup>
 
     ```ruby
     result = func(a, b)
     ```
 
-* <a name="spaces-block-params"></a>Do not include space inside block
-    parameter pipes. Include one space between parameters in a block.
+* <a name="spaces-block-params"></a>No incluyas espacios dentro de los parametros del bloque. Este espacio debe ir afuera de estos.
     Include one space outside block parameter pipes.
     <sup>[[link](#spaces-block-params)]</sup>
 
@@ -172,8 +167,7 @@ Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
     {}.each { |x, y| puts x }
     ```
 
-* <a name="no-space-after-!"></a>Do not leave space between `!` and its
-    argument.<sup>[[link](#no-space-after-!)]</sup>
+* <a name="no-space-after-!"></a>No dejar espacios entre `!` y su argumento.<sup>[[link](#no-space-after-!)]</sup>
 
     ```ruby
     !something
